@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="city_name">City Name</string>
+    <string name="time_now">Time Now</string>
+    <string name="error_while_updating">Error while updating</string>
+    <string name="searchcity">SearchCity</string>
+    <string name="amman">Amman</string>
+    <string name="humidity">Humidity</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="weather_pictures">weather_pictures</string>
+    <string name="bilgi2">:bilgi2</string>
+    <string name="bilgi3">:bilgi3</string>
+    <string name="bilgi4">:bilgi4</string>
+    <string name="bilgi1">:bilgi1</string>
+    <string name="_0c">0C</string>
+    <string name="last_update">Last Update</string>
+    <string name="date">Date</string>
+    <string name="weather_desc">weather Desc</string>
+    <string name="visibility">visibility</string>
+    <string name="splash_screen">Splash Screen</string>
+    <string-array name="numbers">
+        <item>one</item>
+        <item>two</item>
+        <item>three</item>
+        <item>four</item>
+
+    </string-array>
+</resources>
