@@ -7,18 +7,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
     <androidx.cardview.widget.CardView
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="133dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginEnd="5dp"
         app:cardCornerRadius="36dp">
 
         <LinearLayout
             android:id="@+id/linearLayout1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/dimgray"
+            android:background="@color/darkslateblue"
             android:orientation="vertical">
 
             <LinearLayout
@@ -30,7 +30,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="130dp"
+                    android:layout_width="190dp"
                     android:layout_height="90dp"
                     android:orientation="vertical">
 
@@ -43,7 +43,7 @@
                         android:textSize="22sp" />
 
                     <TextView
-                        android:id="@+id/cardDegree"
+                        android:id="@+id/cardDayDegree"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         tools:text="23°C"

@@ -8,7 +8,7 @@ import retrofit2.http.Query
 interface WeatherApi {
 
 //
-    @GET("weather.ashx?key=53c58cb2f50241e5841160922220609&format=json&num_of_days=9")
+    @GET("weather.ashx?key=53c58cb2f50241e5841160922220609&format=json&num_of_days=14")
     fun getCityWeatherData(
         @Query("q") cityName: String
     ): Call<WeatherResponse>

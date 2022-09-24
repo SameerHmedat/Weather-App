@@ -7,9 +7,15 @@
         <entry key="app/src/main/res/drawable/background_color.xml" value="0.1185" />
         <entry key="app/src/main/res/drawable/ic_baseline_cloud_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2422360248447205" />
+        <entry key="app/src/main/res/drawable/ic_sentiment_dissatisfied.xml" value="0.1305" />
+        <entry key="app/src/main/res/drawable/ic_sentiment_satisfied.xml" value="0.1305" />
+        <entry key="app/src/main/res/drawable/ic_sentiment_very_dissatisfied.xml" value="0.1305" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.23754789272030652" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/layout/card_day_item.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/layout/card_hour_item.xml" value="0.26875" />
         <entry key="app/src/main/res/layout/card_item.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/layout/ecc.xml" value="0.26875" />
         <entry key="app/src/main/res/layout/element_items_row.xml" value="0.26979166666666665" />
         <entry key="app/src/main/res/layout/example.xml" value="0.2125340599455041" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1185" />

@@ -19,7 +19,24 @@
     <string name="date">Date</string>
     <string name="weather_desc">weather Desc</string>
     <string name="visibility">visibility</string>
+    <string name="network">Network Error please connect to Internet and try again</string>
     <string name="splash_screen">Splash Screen</string>
+    <string name="error_loading_new">Error Loading</string>
+    <string name="show_progress" translatable="false">Show progress</string>
+    <string name="show_content" translatable="false">Show content</string>
+    <string name="show_error" translatable="false">Show error</string>
+    <string name="show_empty" translatable="false">Show empty</string>
+    <string name="text_sample" translatable="false">Sample Text</string>
+    <string name="sample_normal" translatable="false">Normal Sample</string>
+    <string name="sample_recycler_view" translatable="false">RecyclerView Sample</string>
+    <string name="try_again" translatable="false">Try Again</string>
+    <string name="empty">Content not found</string>
+
+    <string name="lorem" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl enim, gravida vel enim et, eleifend pretium lectus. Cras ullamcorper a quam eu ultricies. Fusce facilisis mattis libero a blandit. Donec et pellentesque ligula. Nulla quis velit a dui mattis tempus sit amet commodo quam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</string>
+    <string name="Please_wait">Please wait</string>
+    <string name="for_14_days">For 14 Days</string>
+    <string name="for_tomorrow_hours">For Tomorrow Hours</string>
+
     <string-array name="numbers">
         <item>one</item>
         <item>two</item>

@@ -1,249 +1,333 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/background_color"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-
-<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh_layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-
-    <LinearLayout
+    <com.santalu.emptyview.EmptyView
+        android:id="@+id/empty_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cons1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#4DFFFFFF"
-            android:orientation="horizontal"
-            android:padding="5dp">
+        app:ev_empty_buttonBackgroundColor="@color/colorPrimary"
+        app:ev_empty_buttonTextColor="@color/white"
+        app:ev_empty_drawable="@drawable/ic_sentiment_dissatisfied"
+        app:ev_empty_drawableTint="@color/colorPrimary"
+        app:ev_empty_title="@string/empty"
+        app:ev_error_backgroundColor="@color/darkslateblue"
+        app:ev_error_button="@string/try_again"
+        app:ev_error_buttonBackgroundColor="@color/sky"
+        app:ev_error_buttonTextColor="@color/white"
+        app:ev_error_drawable="@drawable/ic_sentiment_very_dissatisfied"
+        app:ev_error_drawableTint="@color/white"
+        app:ev_error_text="@string/error_connection"
+        app:ev_error_textColor="@color/white"
+        app:ev_error_title="@string/error_connection_title"
+        app:ev_error_titleTextColor="@color/white"
+        app:ev_loading_type="circular"
+        app:ev_loading_text="@string/Please_wait"
+        app:ev_loading_textColor="@color/white"
+        app:ev_loading_backgroundColor="@color/darkslateblue"
+        app:ev_transition="auto">
 
-            <ImageView
-                android:id="@+id/img_search_city"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/searchcity"
-                android:padding="8dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/ic_baseline_search_24"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/txtInputLayout"
-                />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtInputLayout"
-                android:layout_width="250dp"
-                android:layout_height="60dp"
-                android:background="#55FFFFFF"
-                app:endIconMode="clear_text"
-                app:layout_constraintStart_toEndOf="@id/img_search_city"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_city_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/city_name"
-                    android:inputType="text"
-                    android:lines="1"
-                    android:maxLines="1" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvElement"
-                android:layout_width="250dp"
-                android:layout_height="140dp"
-                android:layout_marginEnd="40dp"
-                android:background="@color/darkslateblue"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                app:layout_constraintStart_toStartOf="@id/txtInputLayout"
-                app:layout_constraintTop_toBottomOf="@id/txtInputLayout" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_data"
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <TextView
-                android:id="@+id/txtError"
-                android:textColor="@color/white"
-                android:text="Error Connection"
-                android:textSize="25sp"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:visibility="gone"
-                />
-
-            <ProgressBar
-                android:id="@+id/progressError"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:visibility="gone"
-                />
+            android:background="@drawable/background_color">
 
 
-            <TextView
-                android:id="@+id/tv_degree"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="50dp"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:textSize="65sp"
-                tools:text="@string/_0c" />
-
-            <LinearLayout
-                android:id="@+id/linearDateTimeCity"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#4DFFFFFF"
-                android:orientation="horizontal"
-                android:padding="15dp">
+                android:padding="16dp">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/txtError"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="150dp"
+                    android:gravity="center"
+                    android:text="@string/error_loading_new"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/progressError"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="160dp"
                     android:layout_weight="1"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/txt_date"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/date"
-                        android:textSize="20sp" />
-                    <TextView
-                        android:id="@+id/txt_time"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="@string/time_now"
-                        android:textSize="20sp" />
+                    android:gravity="center"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/txtError"
 
-                    <TextView
-                        android:id="@+id/tv_city_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="@string/amman"
-                        android:textSize="20sp" />
+                    />
 
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/img_weather_pictures"
-                    android:layout_width="100dp"
+                <LinearLayout
+                    android:id="@+id/mainLayout"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:contentDescription="@string/weather_pictures"
-                    tools:src="@drawable/ic_baseline_cloud_24" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearHumdityUpdateDesc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:background="#4DFFFFFF"
-                android:orientation="horizontal"
-                android:padding="15dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cons1"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/humidity" />
+                        android:background="@color/clouds_color"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/last_update" />
+                        <ImageView
+                            android:id="@+id/img_search_city"
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:contentDescription="@string/searchcity"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_baseline_search_24"
+                            app:layout_constraintEnd_toStartOf="@id/txtInputLayout"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/weather_desc" />
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/txtInputLayout"
+                            android:layout_width="250dp"
+                            android:layout_height="60dp"
+                            android:background="@color/clouds_color"
+                            android:textColorHint="?attr/cityNameTextColor"
+                            app:endIconMode="clear_text"
+                            app:layout_constraintStart_toEndOf="@id/img_search_city"
+                            app:layout_constraintTop_toTopOf="parent">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_city_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/clouds_color"
+                                android:hint="@string/city_name"
+                                android:inputType="text"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:textColor="?attr/cityNameTextColor" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvElement"
+                            android:layout_width="250dp"
+                            android:layout_height="140dp"
+                            android:layout_marginEnd="40dp"
+                            android:background="@color/darkslateblue"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            app:layout_constraintStart_toStartOf="@id/txtInputLayout"
+                            app:layout_constraintTop_toBottomOf="@id/txtInputLayout" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_data"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/visibility" />
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_degree"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="50dp"
+                            android:layout_marginBottom="50dp"
+                            android:gravity="center"
+                            android:textSize="65sp"
+                            android:fontFamily="@font/alfaslabone"
+                            android:textColor="@color/white"
+                            tools:text="@string/_0c" />
+
+                        <LinearLayout
+                            android:id="@+id/linearDateTimeCity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/clouds_color"
+                            android:orientation="horizontal"
+                            android:padding="15dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txt_date"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/date"
+                                    android:textColor="@color/white"
+                                    android:textSize="20sp" />
+
+                                <TextView
+                                    android:id="@+id/txt_time"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/white"
+                                    tools:text="@string/time_now" />
+
+                                <TextView
+                                    android:id="@+id/tv_city_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/white"
+                                    tools:text="@string/amman" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/img_weather_pictures"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent"
+                                android:contentDescription="@string/weather_pictures"
+                                tools:src="@drawable/ic_baseline_cloud_24" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearHumdityUpdateDesc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/clouds_color"
+                            android:orientation="horizontal"
+                            android:padding="15dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/white"
+                                    android:text="@string/humidity" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/white"
+                                    android:text="@string/last_update" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/white"
+                                    android:text="@string/weather_desc" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/white"
+                                    android:text="@string/visibility" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_humidity"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/white"
+                                    tools:text="@string/humidity" />
+
+                                <TextView
+                                    android:id="@+id/tv_last_update"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/white"
+                                    tools:text="@string/last_update" />
+
+                                <TextView
+                                    android:id="@+id/tv_weather_desc"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/white"
+                                    tools:text="@string/weather_desc" />
+
+                                <TextView
+                                    android:id="@+id/tv_visibility"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/white"
+                                    tools:text="@string/visibility" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="@string/for_tomorrow_hours"
+                            android:layout_marginTop="5dp"
+                            android:textSize="25sp"
+                            android:fontFamily="@font/alfaslabone"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            />
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvCardHour"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/clouds_color"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            app:layout_constraintStart_toStartOf="@id/linearHumdityUpdateDesc"
+                            app:layout_constraintTop_toBottomOf="@id/linearHumdityUpdateDesc" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="@string/for_14_days"
+                            android:textSize="25sp"
+                            android:fontFamily="@font/alfaslabone"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:textColor="@color/white"
+                            />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvCardDay"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/clouds_color"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            app:layout_constraintStart_toStartOf="@id/rvCardHour"
+                            app:layout_constraintTop_toBottomOf="@id/rvCardHour" />
+
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tv_humidity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="@string/humidity" />
-
-                    <TextView
-                        android:id="@+id/tv_last_update"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="@string/last_update" />
-
-                    <TextView
-                        android:id="@+id/tv_weather_desc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="@string/weather_desc" />
-
-                    <TextView
-                        android:id="@+id/tv_visibility"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="@string/visibility" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvCard"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
-                android:background="#4DFFFFFF"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:orientation="horizontal"
-                app:layout_constraintStart_toStartOf="@id/linearHumdityUpdateDesc"
-                app:layout_constraintTop_toBottomOf="@id/linearHumdityUpdateDesc" />
-
-
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.santalu.emptyview.EmptyView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

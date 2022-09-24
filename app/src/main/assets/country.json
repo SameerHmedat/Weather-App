@@ -992,6 +992,10 @@
     "city": "Aqaba"
   },
   {
+    "country": "Jordan",
+    "city": "Jarash"
+  },
+  {
     "country": "spain",
     "city": "barcelona"
   },
@@ -1010,5 +1014,34 @@
   {
     "country": "Saudi-arabia",
     "city": "Mecca"
+  },
+  {
+    "country": "Saudi-arabia",
+    "city": "Jeddah"
+  },
+  {
+    "country": "Turkey",
+    "city": "izmir"
+  },{
+    "country": "Turkey",
+    "city": "Sakarya"
+  },{
+    "country": "Turkey",
+    "city": "Bursa"
+  },{
+    "country": "Turkey",
+    "city": "Tokat"
+  },
+{
+    "country": "Turkey",
+    "city": "Ordu"
+  },
+{
+    "country": "Turkey",
+    "city": "Antalya"
+  },
+{
+    "country": "Turkey",
+    "city": "Trabzon"
   }
 ]
