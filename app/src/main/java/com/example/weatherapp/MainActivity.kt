@@ -164,7 +164,6 @@ class MainActivity : AppCompatActivity() {
         tv_weather_desc.text = body.currentCondition[0].weatherDesc[0].value
         tv_visibility.text = body.currentCondition[0].visibility
         txt_date.text = "Date : ${body.weather[0].date}"
-        // Log.d("MainActivity", body.data.currentCondition[0].weatherIconUrl[0].value)
 
         //here because the api return http so not safe so don't work ,fixed it by adding 's' secure
         var url = body.currentCondition[0].weatherIconUrl[0].value
