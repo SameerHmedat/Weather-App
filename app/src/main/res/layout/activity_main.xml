@@ -280,7 +280,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:text="@string/for_tomorrow_hours"
+                            android:text="@string/for_tomorrow_hours"
                             android:layout_marginTop="5dp"
                             android:textSize="25sp"
                             android:fontFamily="@font/alfaslabone"
@@ -301,7 +301,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:text="@string/for_14_days"
+                            android:text="@string/for_14_days"
                             android:textSize="25sp"
                             android:fontFamily="@font/alfaslabone"
                             android:layout_gravity="center"
