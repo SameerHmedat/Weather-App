@@ -664,7 +664,7 @@
     "city": "Koror"
   },
   {
-    "country": "Palestine",
+    "country": "Uzbekistan",
     "city": "Gaza"
   },
   {
@@ -1043,5 +1043,370 @@
 {
     "country": "Turkey",
     "city": "Trabzon"
+  },
+  {
+    "country": "Turkey",
+    "city": "Eskisehir"
+  },
+  {
+    "country": "Turkey",
+    "city": "Samsun"
+  },
+  {
+    "country": "Turkey",
+    "city": "Adiyaman"
+  },
+  {
+    "country": "Turkey",
+    "city": "Amasya"
+  },
+  {
+    "country": "Turkey",
+    "city": "Bolu"
+  },
+  {
+    "country": "Turkey",
+    "city": "Burdur"
+  },
+  {
+    "country": "Turkey",
+    "city": "Denizli"
+  },
+  {
+    "country": "Turkey",
+    "city": "Edirne"
+  },
+  {
+    "country": "Turkey",
+    "city": "Hatay"
+  },
+  {
+    "country": "Turkey",
+    "city": "Isparta"
+  },
+  {
+    "country": "Turkey",
+    "city": "Karaman"
+  },
+  {
+    "country": "Turkey",
+    "city": "Kars"
+  },
+  {
+    "country": "Turkey",
+    "city": "Kastamonu"
+  },
+  {
+    "country": "Turkey",
+    "city": "Kayseri"
+  },
+  {
+    "country": "Turkey",
+    "city": "Kilis"
+  },
+  {
+    "country": "Jordan",
+    "city": "karak"
   }
+,
+  {
+    "country": "Jordan",
+    "city": "Tafilah"
+  } ,
+  {
+    "country": "Jordan",
+    "city": "Madaba"
+  }
+,
+  {
+    "country": "Jordan",
+    "city": "Mafraq"
+  },
+  {
+    "country": "Jordan",
+    "city": "As-Salt"
+  },
+  {
+    "country": "Jordan",
+    "city": "Ramtha"
+  },
+  {
+    "country": "UAE",
+    "city": "Sharjah"
+  },
+  {
+    "country": "UAE",
+    "city": "Ajman"
+  }
+,
+  {
+    "country": "UAE",
+    "city": "Al Ain"
+  },
+  {
+    "country": "UAE",
+    "city": "Fujairah"
+  }
+,
+  {
+    "country": "UAE",
+    "city": "Fujairah"
+  }
+,
+  {
+    "country": "UAE",
+    "city": "Umm al-Quwain"
+  }
+,
+  {
+    "country": "UAE",
+    "city": "Ras Al Khaimah"
+  }
+,
+
+  {
+    "country": "Iran",
+    "city": "Dukhan"
+  },
+  {
+    "country": "Qatar",
+    "city": "Al Khor"
+  },
+  {
+    "country": "Qatar",
+    "city": "Al Wakrah"
+  },
+  {
+    "country": "Yaman",
+    "city": "ar-Rayyan"
+  },
+  {
+    "country": "Palestine",
+    "city": "Nablus"
+  },
+  {
+    "country": "Palestine",
+    "city": "Ramallah"
+  }, {
+    "country": "Palestine",
+    "city": "Khan Yunis"
+  }
+, {
+    "country": "Syria",
+    "city": "Aleppo"
+  },
+  {
+    "country": "Syria",
+    "city": "Idlib"
+  },
+  {
+    "country": "Syria",
+    "city": "Homs"
+  }
+, {
+    "country": "Syria",
+    "city": "Hamah"
+  }, {
+    "country": "Syria",
+    "city": "Tartus"
+  },
+  {
+    "country": "Oman",
+    "city": "Salalah"
+  },
+  {
+    "country": "Germany",
+    "city": "munich"
+  },
+  {
+    "country": "Germany",
+    "city": "Hamburg"
+  },
+  {
+    "country": "Germany",
+    "city": "Stuttgart"
+  },
+  {
+    "country": "Germany",
+    "city": "Cologne"
+  },
+  {
+    "country": "Germany",
+    "city": "Frankfurt"
+  },
+  {
+    "country": "Germany",
+    "city": "Leipzig"
+  },
+  {
+    "country": "Germany",
+    "city": "Bremen"
+  },
+  {
+    "country": "Germany",
+    "city": "Dortmund"
+  },
+  {
+    "country": "Germany",
+    "city": "Hanover"
+  }
+,
+  {
+    "country": "Germany",
+    "city": "Nuremberg"
+  },
+  {
+    "country": "Germany",
+    "city": "Heidelberg"
+  },
+  {
+    "country": "Germany",
+    "city": "Bochum"
+  },
+  {
+    "country": "England",
+    "city": "Liverpool"
+  },
+  {
+    "country": "England",
+    "city": "Manchester"
+  },
+  {
+    "country": "England",
+    "city": "Nottingham"
+  },
+  {
+    "country": "England",
+    "city": "Bristol"
+  },
+  {
+    "country": "England",
+    "city": "Leicester"
+  },
+  {
+    "country": "England",
+    "city": "Birmingham"
+  }
+,
+  {
+    "country": "England",
+    "city": "Norwich"
+  }
+,
+  {
+    "country": "England",
+    "city": "Leeds"
+  }
+,
+  {
+    "country": "England",
+    "city": "Sheffield"
+  }
+,
+  {
+    "country": "England",
+    "city": "Coventry"
+  }
+,
+  {
+    "country": "England",
+    "city": "Southampton"
+  }
+,
+  {
+    "country": "England",
+    "city": "Bradford"
+  }
+,
+  {
+    "country": "England",
+    "city": "Derby"
+  }
+,
+  {
+    "country": "Spain",
+    "city": "Seville"
+  }
+,
+  {
+    "country": "Spain",
+    "city": "Granada"
+  }
+,
+  {
+    "country": "Spain",
+    "city": "Cordoba"
+  }
+,
+  {
+    "country": "Spain",
+    "city": "Malaga"
+  }
+,
+  {
+    "country": "Spain",
+    "city": "Bilbao"
+  }
+,
+  {
+    "country": "Spain",
+    "city": "Zaragoza"
+  }
+,
+  {
+    "country": "Spain",
+    "city": "Cadiz"
+  }
+,
+  {
+    "country": "Spain",
+    "city": "Salamanca"
+  }
+,
+  {
+    "country": "Spain",
+    "city": "Vigo"
+  },
+  {
+    "country": "Spain",
+    "city": "Girona"
+  }
+,
+  {
+    "country": "Spain",
+    "city": "Valladolid"
+  }
+,
+  {
+    "country": "Spain",
+    "city": "Ronda"
+  }
+,
+  {
+    "country": "Spain",
+    "city": "Almeria"
+  },
+  {
+    "country": "Spain",
+    "city": "Burgos"
+  },
+  {
+    "country": "Spain",
+    "city": "Huelva"
+  },
+  {
+    "country": "Spain",
+    "city": "Pamplona"
+  }
+,
+  {
+    "country": "Spain",
+    "city": "Marbella"
+  }
+,
+  {
+    "country": "Venzulea",
+    "city": "Valencia"
+  }
+
 ]

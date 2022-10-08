@@ -27,6 +27,7 @@
         app:ev_error_textColor="@color/white"
         app:ev_error_title="@string/error_connection_title"
         app:ev_error_titleTextColor="@color/white"
+        app:ev_loading_drawable="@drawable/ic_sentiment_satisfied"
         app:ev_loading_type="circular"
         app:ev_loading_text="@string/Please_wait"
         app:ev_loading_textColor="@color/white"

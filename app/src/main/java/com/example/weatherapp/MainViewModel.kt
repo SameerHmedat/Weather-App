@@ -8,40 +8,42 @@ import com.bumptech.glide.manager.Lifecycle
 import com.example.weatherapp.model.Data
 import com.example.weatherapp.response.WeatherResponse
 import com.example.weatherapp.service.WeatherApiService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import retrofit2.Call
 import retrofit2.Response
 
-class MainViewModel:ViewModel() {
+class MainViewModel : ViewModel() {
 
-    val dataMutableLiveData=MutableLiveData<Result>()
+    val dataMutableLiveData = MutableLiveData<Data>()
+    val errorMutableLiveData = MutableLiveData<String>()
+    val loadingMutableLiveData = MutableLiveData<Boolean>()
+    //  var job: Job? = null
+    val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
+        onError("Exception handled: ${throwable.localizedMessage}")
+    }
 
     init {
         getData("Amman")
     }
 
-     fun getData(cityName: String) {
-             dataMutableLiveData.value = Result.Loading
-             WeatherApiService.getInstance().getCityWeatherData(cityName).enqueue(
-                 object : retrofit2.Callback<WeatherResponse> {
+    fun getData(cityName: String) {
+        loadingMutableLiveData.postValue(true)
 
-                     override fun onResponse(
-                         call: Call<WeatherResponse>,
-                         response: Response<WeatherResponse>
-                     ) {
-                         dataMutableLiveData.value = Result.Success(response.body()!!.data)
-                     }
+        CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
+            delay(100)
+            val response = WeatherApiService.getInstance().getCityWeatherData(cityName)
+            withContext(Dispatchers.Main) {
+                if (response.isSuccessful) {
+                    dataMutableLiveData.postValue(response.body()!!.data)
+                }
+                else{
+                    onError("Error : ${response.message()} ")
+                }
 
-                     override fun onFailure(call: Call<WeatherResponse>, t: Throwable) {
-                         dataMutableLiveData.value = Result.Failure(t)
-                         Log.d("Failure Response", t.message.toString())
-                     }
-
-                 })
-
-     }
-
+            }
+        }
+    }
+    private fun onError(message: String) {
+        errorMutableLiveData.postValue(message)
+    }
 }

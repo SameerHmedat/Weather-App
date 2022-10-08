@@ -10,9 +10,9 @@ interface WeatherApi {
 
 
     @GET("weather.ashx?key=59a44641c38d4ba2819175152220510&format=json&num_of_days=14")
-    fun getCityWeatherData(
+    suspend fun getCityWeatherData(
         @Query("q") cityName: String
-    ): Call<WeatherResponse>
+    ): Response<WeatherResponse>
 
 
 }

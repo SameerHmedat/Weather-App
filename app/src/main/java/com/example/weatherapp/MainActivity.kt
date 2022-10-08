@@ -74,44 +74,33 @@ class MainActivity : AppCompatActivity() {
             setTime()
         }
 
-        viewModel.dataMutableLiveData.observe(this@MainActivity) { result ->
-            when (result) {
-                is Result.Failure -> {
-                    empty_view.error().show()
-//                    txtError.visibility = View.VISIBLE
-//                    progressError.visibility = View.GONE
-//                    mainLayout.visibility = View.GONE
-                }
-                Result.Loading -> {
-                    empty_view.loading().show()
-//                    progressError.visibility = View.VISIBLE
-//                    txtError.visibility = View.GONE
-//                    mainLayout.visibility = View.GONE
-                }
-                is Result.Success -> {
-                    empty_view.content().show()
-                    setTime()
-//                    progressError.visibility = View.GONE
-//                    txtError.visibility = View.GONE
-//                    mainLayout.visibility = View.VISIBLE
-                    setDataOnViews(result.data) //the thing exchange between viewModel and Activity
-                }
-            }
-
-            myAdapter.setOnItemClickListener(object : ElementAdapter.OnItemClickedListener {
-                override fun onItemClick(position: Int) {
-                    edt_city_name.setText(myAdapter.newList[position].city_name)
-                    val cityName = edt_city_name.text.toString()
-                    rvElement.visibility = View.INVISIBLE
-                    viewModel.getData(cityName)
-                    cityNameInitial = cityName
-
-
-                }
-            }
-            )
+        viewModel.errorMutableLiveData.observe(this@MainActivity){
+            empty_view.error().show()
         }
+        viewModel.loadingMutableLiveData.observe(this@MainActivity){
+            empty_view.loading().show()
+        }
+        viewModel.dataMutableLiveData.observe(this@MainActivity) { data ->
+            empty_view.content().show()
+            setTime()
+            setDataOnViews(data) //the thing exchange between viewModel and Activity
+        }
+
+
+        myAdapter.setOnItemClickListener(object : ElementAdapter.OnItemClickedListener {
+            override fun onItemClick(position: Int) {
+                edt_city_name.setText(myAdapter.newList[position].city_name)
+                val cityName = edt_city_name.text.toString()
+                rvElement.visibility = View.INVISIBLE
+                viewModel.getData(cityName)
+                cityNameInitial = cityName
+
+
+            }
+        }
+        )
     }
+
 
     private fun setDataOnViews(body: Data) {
         val cardDayList: ArrayList<CardDay> = arrayListOf()
@@ -148,10 +137,10 @@ class MainActivity : AppCompatActivity() {
 
             val cardDegreeHour = "Degree: ${body.weather[1].hourly[i].tempC}°C"
             val cardHourDesc = "Desc: ${body.weather[1].hourly[i].weatherDesc[0].value}"
-            var urlHour = body.weather[1].hourly[i].weatherIconUrl[0].value
-            if (urlHour[4] != 's') {
-                urlHour = urlHour.substring(0, 4) + "s" + urlHour.substring(4)
-            }
+            val urlHour = body.weather[1].hourly[i].weatherIconUrl[0].value
+//            if (urlHour[4] != 's') {
+//                urlHour = urlHour.substring(0, 4) + "s" + urlHour.substring(4)
+//            }
             cardHourList.add(CardHour(cardHourHour, cardDegreeHour, cardHourDesc, urlHour))
         }
         rvCardHour.adapter = cardHourAdapter
@@ -166,10 +155,10 @@ class MainActivity : AppCompatActivity() {
         txt_date.text = "Date : ${body.weather[0].date}"
 
         //here because the api return http so not safe so don't work ,fixed it by adding 's' secure
-        var url = body.currentCondition[0].weatherIconUrl[0].value
-        if (url[4] != 's') {
-            url = url.substring(0, 4) + "s" + url.substring(4)
-        }
+        val url = body.currentCondition[0].weatherIconUrl[0].value
+//        if (url[4] != 's') {
+//            url = url.substring(0, 4) + "s" + url.substring(4)
+//        }
         Glide.with(this).load(url).into(img_weather_pictures)
 
     }
