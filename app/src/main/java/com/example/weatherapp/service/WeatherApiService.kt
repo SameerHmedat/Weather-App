@@ -18,8 +18,5 @@ object WeatherApiService {
         }
 
         return weatherApi!!
-
     }
-
-
 }

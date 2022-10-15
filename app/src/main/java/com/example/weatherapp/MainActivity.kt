@@ -18,6 +18,7 @@ import com.example.weatherapp.dataClass.Element
 import com.example.weatherapp.model.Data
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.card_hour_item.*
+import kotlinx.android.synthetic.main.element_items_row.*
 import org.json.JSONArray
 import java.text.DateFormat
 import java.text.SimpleDateFormat
@@ -74,18 +75,23 @@ class MainActivity : AppCompatActivity() {
             setTime()
         }
 
-        viewModel.errorMutableLiveData.observe(this@MainActivity){
-            empty_view.error().show()
-        }
-        viewModel.loadingMutableLiveData.observe(this@MainActivity){
-            empty_view.loading().show()
-        }
-        viewModel.dataMutableLiveData.observe(this@MainActivity) { data ->
-            empty_view.content().show()
-            setTime()
-            setDataOnViews(data) //the thing exchange between viewModel and Activity
-        }
+        viewModel.resultMutableLiveData.observe(this@MainActivity){ result->
+            when(result){
+                is Result.Failure ->
+                {
+                    empty_view.error().show()
+                }
+                Result.Loading -> {
+                    empty_view.loading().show()
+                }
+                is Result.Success -> {
+                    empty_view.content().show()
+                    setTime()
+                    setDataOnViews(result.data) //the thing exchange between viewModel and Activity
 
+                }
+            }
+        }
 
         myAdapter.setOnItemClickListener(object : ElementAdapter.OnItemClickedListener {
             override fun onItemClick(position: Int) {
